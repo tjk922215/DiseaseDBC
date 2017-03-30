@@ -1,0 +1,110 @@
+# Basic Source
+| ReportID              | int(11)                                                                                                                                              | NO   | PRI | NULL    | auto_increment |
+| Reporter              | enum('Lai Yingsi','Du zhiheng','Huang Yun','Wang Xinwei','He Wenjun','Dai Bofeng')                                                                   | NO   |     | NULL    |                |
+| Disease               | enum('STH','dengue','foodborne trematodiases','malaria','hfmd','TB','Hepatitis B','diarrhea','iron deficient anemia','other')                        | NO   |     | NULL    |                |
+| Country               | enum('China','Myanmar','Cambodia','Indonesia','Laos','Malaysia','Philippines','Thailand','Vietnam','India','Bangladesh','Bhutan','Nepal','Pakistan') | NO   |     | NULL    |                |
+| Document Category     | enum('peer-review literature','working report','thesis','personal communication','other database','others')                                          | NO   |     | NULL    |                |
+| Journal               | varchar(45)                                                                                                                                          | NO   |     | NULL    |                |
+| Title                 | varchar(45)                                                                                                                                          | NO   |     | NULL    |                |
+| Authors               | varchar(45)                                                                                                                                          | NO   |     | NULL    |                |
+| Year of Pub           | int(11)                                                                                                                                              | NO   |     | NULL    |                |
+| Volume                | int(11)                                                                                                                                              | YES  |     | NULL    |                |
+| Issue                 | int(11)                                                                                                                                              | YES  |     | NULL    |                |
+| Page from             | int(11)                                                                                                                                              | YES  |     | NULL    |                |
+| Page to               | int(11)                                                                                                                                              | YES  |     | NULL    |                |
+| Author contact needed | enum('No','Yes','Already')                                                                                                                           | NO   |     | NULL    |                |
+| Open access           | enum('No','Yes')                                                                                                                                     | NO   |     | NULL    |                |
+| checked               | enum('No','Yes')                                                                                                                                     | YES  |     | NULL    |                |
+| note1                 | longtext                                                                                                                                             | YES  |     | NULL    |                |
+ReportID
+Reporter: 'Lai Yingsi','Du zhiheng','Huang Yun','Wang Xinwei','He Wenjun','Dai Bofeng'
+Disease: 'STH','dengue','foodborne trematodiases','malaria','hfmd','TB','Hepatitis B','diarrhea','iron deficient anemia','other'
+Country: 'China','Myanmar','Cambodia','Indonesia','Laos','Malaysia','Philippines','Thailand','Vietnam','India','Bangladesh','Bhutan','Nepal','Pakistan'
+Document Category: 'peer-review literature','working report','thesis','personal communication','other database','others'
+Author contact needed: 'No','Yes','Already'
+Journal
+Title
+Authors
+Year of Pub
+Volume
+Issue
+Page from
+Page to
+Open access: 'No','Yes'
+checked: 'No','Yes'
+note1
+
+# Disease data
+| DiseaseID                                        | int(11)                                                                                                                                                                                                                                                                                                                         | NO   | PRI | NULL    | auto_increment |
+| Location information_LocationID                  | enum('Ascaris lumbricoides','Trichuris trichiura','hookworm','Necator americanus','Ancylostoma duodenale','Dengue','Opisthorchis viverrini','Clonorchis sinensis','Plasmodium falciparum','Plasmodium vivax','Plasmodium malariae','Plasmodium ovale','Plasmodium knowlesi','hfmd','CA16','EV71','hfmd_other species','others') | NO   |     | NULL    |                |
+| Species                                          | varchar(45)                                                                                                                                                                                                                                                                                                                     | NO   |     | NULL    |                |
+| Diagnostic_symptoms                              | varchar(45)                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |                |
+| Diagnostic_blood                                 | varchar(45)                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |                |
+| Diagnostic_skin                                  | varchar(45)                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |                |
+| Diagnostic_stool                                 | varchar(45)                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |                |
+| Num_samples                                      | varchar(45)                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |                |
+| Num_specimen                                     | varchar(45)                                                                                                                                                                                                                                                                                                                     | YES  |     | NULL    |                |
+| AgeLower                                         | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| AgeUpper                                         | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Num_examine                                      | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Num_positive                                     | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Percent_positive                                 | float                                                                                                                                                                                                                                                                                                                           | YES  |     | NULL    |                |
+| Num_examine_male                                 | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Num_positive_male                                | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Percent_positive_male                            | float                                                                                                                                                                                                                                                                                                                           | YES  |     | NULL    |                |
+| Num_examine_female                               | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Num_examine_female                              | int(11)                                                                                                                                                                                                                                                                                                                         | YES  |     | NULL    |                |
+| Percent_positive_female                          | float                                                                                                                                                                                                                                                                                                                           | YES  |     | NULL    |                |
+| note4                                            | longtext                                                                                                                                                                                                                                                                                                                        | YES  |     | NULL    |                |
+| Location information_LocationID1                 | int(11)                                                                                                                                                                                                                                                                                                                         | NO   | PRI | NULL    |                |
+| L_ReportID                                       | int(11)                                                                                                                                                                                                                                                                                                                         | NO   | PRI | NULL    |                |
+| Location information_Survey description_SurveyID | int(11)                                                                                                                                                                                                                                                                                                                         | NO   | PRI | NULL    |                |
+
+# Intervention data
+| InterventionID                                                | int(11)                                             | NO   | PRI | NULL    | auto_increment |
+| Group                                                         | enum('intervention group','control group','others') | YES  |     | NULL    |                |
+| Months after baseline                                         | int(11)                                             | YES  |     | NULL    |                |
+| Drug                                                          | varchar(45)                                         | YES  |     | NULL    |                |
+| Frequency per year                                            | int(11)                                             | YES  |     | NULL    |                |
+| Period (months)                                               | int(11)                                             | YES  |     | NULL    |                |
+| Coverage                                                      | float                                               | YES  |     | NULL    |                |
+| Other method                                                  | varchar(45)                                         | YES  |     | NULL    |                |
+| I_Num_examine                                                 | int(11)                                             | YES  |     | NULL    |                |
+| I_Num_positive                                                | int(11)                                             | YES  |     | NULL    |                |
+| I_Percent_positive                                            | float                                               | YES  |     | NULL    |                |
+| I_Num_examine_male                                            | int(11)                                             | YES  |     | NULL    |                |
+| I_Num_positive_male                                           | int(11)                                             | YES  |     | NULL    |                |
+| I_Percent_positive_male                                       | float                                               | YES  |     | NULL    |                |
+| I_Num_examine_female                                          | int(11)                                             | YES  |     | NULL    |                |
+| I_Num_positive_female                                         | int(11)                                             | YES  |     | NULL    |                |
+| I_Percent_positive_female                                     | float                                               | YES  |     | NULL    |                |
+| note5                                                         | longtext                                            | YES  |     | NULL    |                |
+| Disease data_DiseaseID                                        | int(11)                                             | NO   | PRI | NULL    |                |
+| Disease data_Location information_LocationID1                 | int(11)                                             | NO   | PRI | NULL    |                |
+| Disease data_L_ReportID                                       | int(11)                                             | NO   | PRI | NULL    |                |
+| Disease data_Location information_Survey description_SurveyID | int(11)                                             | NO   | PRI | NULL    |
+
+# Location Information
+| LocationID                                | int(11)                                                                                                 | NO   | PRI | NULL    | auto_increment |
+| Survey description_Basic sources_ReportID | int(11)                                                                                                 | NO   | PRI | NULL    |                |
+| Survey description_SurveyID               | int(11)                                                                                                 | NO   | PRI | NULL    |                |
+| ADM1                                      | varchar(45)                                                                                             | YES  |     | NULL    |                |
+| ADM2                                      | varchar(45)                                                                                             | YES  |     | NULL    |                |
+| ADM3                                      | varchar(45)                                                                                             | YES  |     | NULL    |                |
+| Point name                                | varchar(45)                                                                                             | YES  |     | NULL    |                |
+| Point type                                | enum('school','village','town','county','area','region','AMD3','ADM2','ADM1')                           | YES  |     | NULL    |                |
+| Latitude                                  | float                                                                                                   | YES  |     | NULL    |                |
+| Longitude                                 | float                                                                                                   | YES  |     | NULL    |                |
+| Geo-reference sources                     | enum('NA','google map','wikimapia','GEOnet Names Server','GeoPostcodes','provided by authors','others') | YES  |     | NULL    |                |
+| note3                                     | longtext                                                                                                | YES  |     | NULL    |                |
+
+# Survey description
+| SurveyID               | int(11)                                                                                 | NO   | PRI | NULL    | auto_increment |
+| Basic sources_ReportID | int(11)                                                                                 | NO   | PRI | NULL    |                |
+| Data type              | enum('prevalence','incidence','outbreak','others')                                      | NO   |     | NULL    |                |
+| Survey type            | enum('community','school-based','hospital-based','under-school-aged children','others') | NO   |     | NULL    |                |
+| Month start            | enum('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')           | YES  |     | NULL    |                |
+| Month finish           | enum('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')           | YES  |     | NULL    |                |
+| Year start             | varchar(45)                                                                             | YES  |     | NULL    |                |
+| Year finish            | varchar(45)                                                                             | YES  |     | NULL    |                |
+| note2                  | longtext                                                                                | YES  |     | NULL    |                |
